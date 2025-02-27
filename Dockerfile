@@ -4,7 +4,6 @@ LABEL maintainer="Damir Kucic <dkucic@gmail.com>"
 LABEL description="Environment for running OpenRouter API CLI"
 
 # Install required packages with pinned versions
-# hadolint ignore=DL3018
 RUN apk add --no-cache \
     bash=5.2.37-r0 \
     curl=8.12.1-r0 \
