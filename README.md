@@ -26,10 +26,13 @@ Examples:
   ./openroutercli.sh -u "Tell me a long story" -t
   cat prompt.txt | ./openroutercli.sh -m anthropic/claude-3-sonnet
 ```
-## _Dockerfile_
+The script checks for the existance of OPENROUTER_API_KEY environment variable. If variable does not exist or
+has no value stored the script attempts to fetch the api key via pass. Variable is obtaine by referencing the pass entry
+and parsing `OPENROUTER_API_KEY=$(pass show registrations/openrouter | grep API | cut -d ':' -f 2 | xargs)`. 
+If you use pass adjust adjust the extraction and parsing in accordance to your organizational and entry formats.
+Environmental variable approach was added for the purpose of containerization.
 
-For the purpose of running in container script has been extended to also check for the existance of 
-OPENROUTER_API_KEY environment variable.
+## _Dockerfile_
 
 Build
 ```sh
@@ -39,3 +42,5 @@ Run
 ```sh
 docker run --rm -e OPENROUTER_API_KEY="*****" openroutercli:latest
 ```
+
+TODO: Add support for the attachments
