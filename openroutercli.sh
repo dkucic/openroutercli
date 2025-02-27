@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ------------------------------------------------------------------------------------
-# 2025, by Damir Kucic  
+# 2025, by dkucic  
 # Description: A shell script wrapper for OpenRouter API. 
 # OpenRouter: https://openrouter.ai
 # Note: The API key is securely retrieved using `pass` or by reading the value from

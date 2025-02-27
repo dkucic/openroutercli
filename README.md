@@ -29,7 +29,7 @@ Examples:
 ## _Dockerfile_
 
 For the purpose of running in container script has been extended to also check for the existance of 
-**OPENROUTER_API_KEY** environment variable.
+OPENROUTER_API_KEY environment variable.
 
 Build
 ```sh
