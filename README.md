@@ -32,15 +32,23 @@ and parsing `OPENROUTER_API_KEY=$(pass show registrations/openrouter | grep API 
 If you use pass adjust adjust the extraction and parsing in accordance to your organizational and entry formats.
 Environmental variable approach was added for the purpose of containerization.
 
-## _Dockerfile_
+## Docker 
+
+Pull the automatically built image
+```sh
+docker pull ghcr.io/dkucic/openroutercli:latest
+```
+
+Run the container
+```sh
+docker run --rm -e OPENROUTER_API_KEY="*****" openroutercli:latest
+```
+
+### _Dockerfile_
 
 Build
 ```sh
 docker build . -t openroutercli:latest
-```
-Run
-```sh
-docker run --rm -e OPENROUTER_API_KEY="*****" openroutercli:latest
 ```
 
 TODO: Add support for the attachments
